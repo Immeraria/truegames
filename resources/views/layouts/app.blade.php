@@ -36,12 +36,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('catalog.index') }}">{{ __('Каталог') }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('catalog.create') }}">{{ __('Товары') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('orders.index') }}">{{ __('Заказы') }}</a>
-                        </li>
+                        @auth
+                            @if(Auth::user()->role === 'admin')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('catalog.create') }}">{{ __('Товары') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('orders.index') }}">{{ __('Заказы') }}</a>
+                            </li>
+                            @endif
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->

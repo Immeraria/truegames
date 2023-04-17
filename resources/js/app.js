@@ -23,24 +23,6 @@ for (let i = 0; i < tabNavs.length; i++) {
   });
 }
 
-// $(".delete").click(function () {
-//   let id = $(this).data("id");
-//   let token = $(this).data("token");
+let minus = $('#basket-btn-minus');
+let plus = $('#basket-btn-plus');
 
-//   $.ajaxSetup({
-//     headers: {
-//       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//     }
-//   });
-
-//   $.ajax(
-//     {
-//       url: "/catalog/products/destroy/" + id,
-//       type: 'DELETE',
-//       dataType: "JSON",
-//       data:
-//       {
-//         "id": id,
-//       }
-//     });
-// });
