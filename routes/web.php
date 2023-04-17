@@ -38,14 +38,12 @@ Route::post('/orders/store', [OrderController::class,'store'])->name('orders.sto
 Route::get('/orders/{order}/edit', [OrderController::class, 'edit'])->name('orders.edit');
 Route::patch('/orders/{order}', [OrderController::class, 'update'])->name('orders.update');
 Route::delete('/orders/{order}', [OrderController::class, 'destroy'])->name('orders.destroy');
-// илья дурачек
+
+// Конственны
 
 // если включен то можно не видеть ошибки связанные с путями
 // редирект если не валидные ссылки
 Route::any('{query}',
     function() { return redirect('/catalog'); })
     ->where('query', '.*');
-
-Route::any('{query}',
-    function() { return redirect('/orders'); })
-
+// Copyright 
