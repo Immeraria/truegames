@@ -33,6 +33,11 @@ Route::delete('/catalog/basket/destroy', [BasketController::class, 'destroy'])->
 
 // Заказы
 Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
+Route::post('/orders/store', [OrderController::class,'store'])->name('orders.store');
+Route::get('/orders/{order}/edit', [OrderController::class, 'edit'])->name('orders.edit');
+Route::patch('/orders/{order}', [OrderController::class, 'update'])->name('orders.update');
+Route::delete('/orders/{order}', [OrderController::class, 'destroy'])->name('orders.destroy');
 
 
 // если включен то можно не видеть ошибки связанные с путями
@@ -40,3 +45,4 @@ Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
 // Route::any('{query}',
 //     function() { return redirect('/catalog'); })
 //     ->where('query', '.*');
+
