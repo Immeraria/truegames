@@ -23,24 +23,24 @@ for (let i = 0; i < tabNavs.length; i++) {
   });
 }
 
-$(".delete").click(function () {
-  let id = $(this).data("id");
-  let token = $(this).data("token");
+// $(".delete").click(function () {
+//   let id = $(this).data("id");
+//   let token = $(this).data("token");
 
-  $.ajaxSetup({
-    headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-  });
+//   $.ajaxSetup({
+//     headers: {
+//       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//     }
+//   });
 
-  $.ajax(
-    {
-      url: "/catalog/products/destroy/" + id,
-      type: 'DELETE',
-      dataType: "JSON",
-      data:
-      {
-        "id": id,
-      }
-    });
-});
+//   $.ajax(
+//     {
+//       url: "/catalog/products/destroy/" + id,
+//       type: 'DELETE',
+//       dataType: "JSON",
+//       data:
+//       {
+//         "id": id,
+//       }
+//     });
+// });

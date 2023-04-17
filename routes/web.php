@@ -24,7 +24,7 @@ Route::get('/catalog/products/{product}', [CatalogController::class, 'show'])->n
 Route::post('/catalog/products/store', [ProductController::class, 'store'])->name('catalog.product.store');
 Route::get('/catalog/products/{product}/edit', [ProductController::class, 'edit'])->name('catalog.product.edit');
 Route::patch('/catalog/products/{product}', [ProductController::class, 'update'])->name('catalog.product.update');
-Route::delete('/catalog/products/destroy/{product}', [ProductController::class, 'destroy'])->name('catalog.product.destroy');
+Route::delete('/catalog/products/{product}', [ProductController::class, 'destroy'])->name('catalog.product.destroy');
 
 // Корзина
 Route::get('/catalog/basket', [BasketController::class, 'index'])->name('basket.index');

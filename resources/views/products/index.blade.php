@@ -32,7 +32,11 @@
                     </form>
                 </td>
                 <td class="col-1">
-                    <button class="delete btn btn-dark" data-id="{{ $product->id }}">Удалить</button>
+                    <form action="{{ route('catalog.product.destroy', $product->id) }}" method="post">
+                    @method('delete')
+                    @csrf
+                        <button class="btn btn-dark" type="submit">Удалить</button>
+                    </form>
                 </td>
             </tr>
             @endforeach
