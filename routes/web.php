@@ -42,7 +42,10 @@ Route::delete('/orders/{order}', [OrderController::class, 'destroy'])->name('ord
 
 // если включен то можно не видеть ошибки связанные с путями
 // редирект если не валидные ссылки
-// Route::any('{query}',
-//     function() { return redirect('/catalog'); })
-//     ->where('query', '.*');
+Route::any('{query}',
+    function() { return redirect('/catalog'); })
+    ->where('query', '.*');
+
+Route::any('{query}',
+    function() { return redirect('/orders'); })
 
