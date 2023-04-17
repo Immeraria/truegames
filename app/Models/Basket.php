@@ -8,9 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Basket extends Model
 {
     protected $fillable = [
-        'name',
-        'price',
-        'image',
-        'description',
+        'user_id',
+        'product_id',
+        'count',
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

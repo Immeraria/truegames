@@ -20,14 +20,16 @@ Route::delete('/catalog/categories/{category}', [CategoryController::class, 'des
 
 // Продукты
 Route::get('/catalog/create', [CatalogController::class, 'create'])->name('catalog.create');
+Route::get('/catalog/products/{product}', [CatalogController::class, 'show'])->name('catalog.show');
 Route::post('/catalog/products/store', [ProductController::class, 'store'])->name('catalog.product.store');
 Route::get('/catalog/products/{product}/edit', [ProductController::class, 'edit'])->name('catalog.product.edit');
 Route::patch('/catalog/products/{product}', [ProductController::class, 'update'])->name('catalog.product.update');
-Route::delete('/catalog/products/{product}', [ProductController::class, 'destroy'])->name('catalog.product.destroy');
+Route::delete('/catalog/products/destroy/{product}', [ProductController::class, 'destroy'])->name('catalog.product.destroy');
 
 // Корзина
 Route::get('/catalog/basket', [BasketController::class, 'index'])->name('basket.index');
 Route::post('/catalog/basket/store', [BasketController::class, 'store'])->name('basket.store');
+Route::delete('/catalog/basket/destroy', [BasketController::class, 'destroy'])->name('basket.destroy');
 
 // Заказы
 Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');

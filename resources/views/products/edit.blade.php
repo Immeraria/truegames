@@ -53,7 +53,7 @@
         <input value="" name="images[]" type="file" multiple class="form-file-input form-control" id="customFile">
     </div>
 
-    <button type="submit" class="btn btn-dark mb-4">Добавить товар</button>
+    <button type="submit" class="btn btn-dark mb-4">Изменить товар</button>
 
 </form>
 @endsection

@@ -16,6 +16,7 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css'])
+    <script src = "https://ajax.googleapis.com/ajax/libs/jQuery/3.3.1/jQuery.min.js"></script>
 </head>
 
 <body>
@@ -60,7 +61,7 @@
                         @endif
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('basket.index') }}">{{ __('Корзина') }}</a>
+                            <a class="nav-link" href="{{ route('basket.index', Auth::user()->id) }}">{{ __('Корзина ') . count(  DB::table('baskets')->where('user_id', Auth::user()->id)->get()  )  }}</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -84,11 +85,12 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="bg-white mt-3">
             @yield('content')
         </main>
-        
+
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 </body>
 
 </html>

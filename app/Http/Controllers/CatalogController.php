@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Basket;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Image;
@@ -13,7 +14,9 @@ class CatalogController extends Controller
     {
         $images = Image::all();
         $products = Product::all();
-        return view('catalog.index', compact('products', 'images'));
+        $baskets = Basket::all();
+        $categories = Category::all();
+        return view('catalog.index', compact('products', 'images', 'baskets', 'categories'));
     }
     
     public function create(Request $request)

@@ -22,4 +22,9 @@ class Product extends Model
     {
         return $this->hasMany(Image::class);
     }
+
+    public function basket()
+    {
+        return $this->belongsTo(Basket::class);
+    }
 }
